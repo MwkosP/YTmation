@@ -1,6 +1,6 @@
-# YT Pipeline
+# YT Automation Pipeline
 
-Python framework for helping in video production :)
+Modular Python system for automated YouTube video production.
 
 ---
 
@@ -66,6 +66,35 @@ JSON files in `Storage/db/`: `uploads.json`, `cache.json`, `history.json`, `logs
 - SFX delay: `adelay={ms}|{ms},volume=x`
 - Music: `stream_loop -1` + `afade` out
 - GPU (when available): `-c:v h264_nvenc -preset p4`
+
+---
+
+## Examples
+
+```python
+from Script.script import generateScript
+from Voice.voice import generateVoice
+from Stitching.stitching import overlayAudio, overlayMusic
+from Music.music import prepareMusic
+from Thumbnail.thumbnail import generateThumbnail
+from Storage.storage import logRun
+
+def run(channel="math"):
+    try:
+        script = generateScript("Top 5 math facts", channel=channel)
+        voice  = generateVoice(script, channel=channel)
+        music  = prepareMusic(vibe="ambient", channel=channel)
+
+        video  = overlayAudio("math.mp4", voice, start=0, channel=channel)
+        video  = overlayMusic(video, music, channel=channel)
+
+        generateThumbnail("Top 5 Math Facts", channel=channel)
+        logRun(success=True, channel=channel)
+    except Exception as e:
+        logRun(success=False, error=str(e), channel=channel)
+```
+
+> Input video (`math.mp4`) lives at the project root, same level as `main.py`.
 
 ---
 
