@@ -1,6 +1,7 @@
 # YT framework
 
 Python framework for helping you for YouTube videos.
+NOTE: this is not production automation. ITS SIMPLY TO HELP YOU ON SOME BORING REPEATED TASKS ETC.
 
 ![Preview](preview.gif)
 ---
