@@ -1,4 +1,4 @@
-# YT Automation Pipeline
+# YT Pipeline
 
 Python framework for helping in video production :)
 
