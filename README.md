@@ -1,7 +1,8 @@
-# YT Automation Pipeline
+# YT framework
 
-Modular Python system for automated YouTube video production.
+Python framework for helping you for YouTube videos.
 
+![Preview](preview.gif)
 ---
 
 ## Structure
@@ -95,7 +96,7 @@ def run(channel="math"):
 ```
 
 > Input video (`math.mp4`) lives at the project root, same level as `main.py`.
-![Preview](preview.gif)
+
 ---
 
 ## Planned
